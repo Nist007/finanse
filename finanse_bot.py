@@ -10,7 +10,7 @@ def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     button1 = types.KeyboardButton("Пополнение")
     button2 = types.KeyboardButton("Расходы")
-    button3 = types.KeyboardButton("Остаток")
+    button3 = types.KeyboardButton("Оsтаток")
     markup.add(button1, button2, button3)
 
     bot.send_message(message.chat.id, "Введите команду", reply_markup=markup)
