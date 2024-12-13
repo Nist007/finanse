@@ -1,8 +1,26 @@
 import telebot
 from telebot import types
+import base64
 
-apikey = '8047962328:AAG91xDawlVSOKonbNUzUpr5WiA1bzMiaSg'
-bot = telebot.TeleBot(apikey)
+
+import base64
+import telebot
+
+
+apikey = 'ODA0Nzk2MjMyODpBQUc5MXhEYXdsVlNPS29uYk5VelVwcjVXaUExYnpNaWFTZw=='
+
+def decode_api(encoded_key):
+
+    decoded_bytes = base64.b64decode(encoded_key)
+    decoded_key = decoded_bytes.decode('utf-8')
+    return decoded_key
+
+
+bot = telebot.TeleBot(decode_api(apikey))
+
+
+
+
 
 
 @bot.message_handler(commands=['start'])
