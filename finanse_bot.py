@@ -7,16 +7,9 @@ import base64
 import telebot
 
 
-apikey = 'ODA0Nzk2MjMyODpBQUc5MXhEYXdsVlNPS29uYk5VelVwcjVXaUExYnpNaWFTZw=='
-
-def decode_api(encoded_key):
-
-    decoded_bytes = base64.b64decode(encoded_key)
-    decoded_key = decoded_bytes.decode('utf-8')
-    return decoded_key
-
-
-bot = telebot.TeleBot(decode_api(apikey))
+with open('api_key.txt', 'r') as file:
+    apikey = file.read().strip()
+bot = telebot.TeleBot(apikey)
 
 
 
